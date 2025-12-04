@@ -20,6 +20,45 @@
     @media (max-width: 800px) {
         .support-grid { grid-template-columns: 1fr; }
     }
+
+    /* --- SUCCESS MODAL STYLES --- */
+    .modal-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+    }
+    .modal-box {
+        background: #fff;
+        padding: 30px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        animation: popUp 0.3s ease-out forwards;
+    }
+    .modal-icon {
+        width: 70px; height: 70px;
+        background: #e6f7ea;
+        color: #1B8F3A;
+        border-radius: 50%;
+        font-size: 35px;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 15px auto;
+    }
+    .modal-title { font-family: 'Montserrat', sans-serif; font-size: 22px; margin: 0 0 10px; color: #000; }
+    .modal-text { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    
+    @keyframes popUp {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -68,9 +107,6 @@
               <p style="margin-top:8px; font-size:14px; color:#555; line-height:1.5;">
                 Pledging is a non-binding way to show Abubakar that you believe in the vision for a <strong>Safer, More Inclusive UMYU</strong>.
               </p>
-              <p style="margin-top:8px; font-size:14px; color:#555; line-height:1.5;">
-                It helps the campaign team measure strength and organize volunteers effectively.
-              </p>
             </div>
 
             <div style="text-align:center;">
@@ -78,11 +114,6 @@
                 <a href="contact.html" class="btn btn-outline" style="width:100%; display:block;">Register as Volunteer</a>
             </div>
           </aside>
-
-        </div>
-
-        <div style="margin-top:30px; border-top:1px solid #eee; padding-top:20px;" class="muted">
-          <em>Privacy Policy:</em> We will not share your email or details publicly. Pledges are used only to coordinate campaign updates.
         </div>
       </div>
     </section>
@@ -96,6 +127,15 @@
       <div class="small">&copy; <span id="yr4"></span> Campaign. All Rights Reserved.</div>
     </div>
   </footer>
+
+  <div id="successModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icon">✔</div>
+      <h3 class="modal-title">Pledge Recorded!</h3>
+      <p class="modal-text">Thank you for standing with us. A confirmation email has been sent to your inbox.</p>
+      <button onclick="closeModal()" class="btn btn-primary" style="width:100%">Close</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
   <script>document.getElementById('yr4').textContent=new Date().getFullYear();</script>

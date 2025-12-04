@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   // --- 2. Countdown Timer Logic (Global) ---
-  // We check if the element exists first to avoid errors on pages without the timer
   const countdownEl = document.getElementById("countdown");
   
   if (countdownEl || document.getElementById("days")) {
@@ -38,20 +37,16 @@ document.addEventListener('DOMContentLoaded', function(){
               document.getElementById("seconds").innerText = seconds;
           }
       }
-      
-      // Run immediately then every second
       setInterval(updateCountdown, 1000);
       updateCountdown();
   }
 
 
-  // --- 3. EMAILJS HANDLING (Safe Mode) ---
-  // This check prevents the script from crashing on pages that don't have EmailJS loaded
+  // --- 3. EMAILJS HANDLING ---
   if (typeof emailjs !== 'undefined') {
       
       emailjs.init("DXO1Ea2PLN3BDEyRO"); 
 
-      // PLEDGE FORM HANDLING
       const pledgeForm = document.getElementById('pledgeForm');
       
       if(pledgeForm){
@@ -69,9 +64,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
           emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
+              // SUCCESS
               btn.innerText = "Pledge Confirmed!";
               btn.style.backgroundColor = "#1B8F3A"; 
-              alert('Thank you! A confirmation email has been sent.');
+              
+              // --- SHOW MODAL INSTEAD OF ALERT ---
+              const modal = document.getElementById('successModal');
+              if(modal) {
+                  modal.style.display = 'flex';
+              } else {
+                  // Fallback if modal is missing for some reason
+                  alert('Thank you! A confirmation email has been sent.');
+              }
+              
               pledgeForm.reset();
               
               setTimeout(() => {
@@ -81,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
               }, 3000);
 
             }, (err) => {
+              // ERROR
               btn.innerText = originalText;
               btn.disabled = false;
               alert('Failed to send pledge. Please check your internet connection.');
@@ -90,10 +96,17 @@ document.addEventListener('DOMContentLoaded', function(){
       }
   }
 
-  // --- 4. Pledge Count (Optional/Hidden) ---
+  // --- 4. Pledge Count (Hidden) ---
   const countEl = document.getElementById('pledgeCount');
   if(countEl) {
       const pledges = JSON.parse(localStorage.getItem('pledges') || '[]');
       countEl.innerText = pledges.length;
   }
 });
+
+// --- 5. Global Function to Close Modal ---
+// Defined outside because it's called via onclick="" in HTML
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    if(modal) modal.style.display = 'none';
+}
