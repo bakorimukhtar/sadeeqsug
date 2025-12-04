@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Abubakar A. Karfi</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico">
+  
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+      margin-top: 18px;
+    }
+    @media (max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    /* Form Styling Improvements */
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-family: inherit;
+    }
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: var(--orange);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Campaign logo">
+        <h1>Contact</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="support.html" class="cta-pledge">Pledge / Support</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:900px">
+        <h3>Open Door Policy</h3>
+        <p class="muted">As promised in my manifesto: Questions, suggestions, or critical feedback—I am listening.</p>
+
+        <div class="contact-grid">
+          
+          <form action="https://formspree.io/f/myzrpgkk" method="POST" style="display:flex;flex-direction:column;gap:15px">
+            
+            <input type="text" name="name" placeholder="Your Name" required>
+            
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            
+            <input type="text" name="subject" placeholder="Subject (e.g., Volunteering, Question, Suggestion)">
+            
+            <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
+            
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+
+          <aside style="display:flex;flex-direction:column;gap:15px">
+            
+            <div style="padding:20px;border-radius:12px;box-shadow:var(--shadow); background:#fff;">
+              <strong>Campaign Contacts</strong>
+              <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+              
+              <p style="margin:10px 0 0; font-size:14px;">
+                <strong>Handle:</strong> @Sadeeq_Karfi
+              </p>
+              
+              <p style="margin:10px 0 0; font-size:14px;">
+                <strong>Email:</strong> <br> 
+                <a href="mailto:campaign@rijxa.com.ng" style="color:var(--orange);">campaign@rijxa.com.ng</a>
+              </p>
+              
+              <p style="margin:10px 0 0; font-size:14px;">
+                <strong>WhatsApp:</strong> <br> 
+                <a href="https://wa.me/2348000000000" target="_blank" style="color:var(--green); font-weight:600;">+234 8XX XXX XXXX</a>
+              </p>
+            </div>
+
+            <div style="padding:20px;border-radius:12px;box-shadow:var(--shadow); background:var(--black); color:white;">
+              <strong>Join the Team</strong>
+              <p style="margin:10px 0 15px; font-size:13px; opacity:0.8;">We need volunteers for the campaign rallies.</p>
+              <a href="support.html" class="btn btn-primary" style="display:block; text-align:center;">Register as Volunteer</a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <strong>Abubakar A. Karfi</strong><div class="small">Candidate for SUG President — UMYU</div>
+      </div>
+      <div class="small">&copy; <span id="yr5"></span> Campaign. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('yr5').textContent=new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abubakar Ahmed Karfi — SUG President Candidate</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Campaign logo">
+        <h1>Abubakar A. Karfi — SUG President</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="support.html" class="cta-pledge">Pledge / Support</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-card">
+            <h2>Vote Abubakar Ahmed Karfi for SUG President</h2>
+            <p class="lead">Fairness • Opportunity • Growth</p>
+            <p>The SUG is the heartbeat of the student community. My purpose is simple yet powerful: to initiate reforms, strengthen student welfare, and build a union that works for every student irrespective of faculty, background, or level.</p>
+            
+            <div class="actions" style="margin-top:18px">
+              <a class="btn btn-primary" href="support.html">Pledge Support</a>
+              <a class="btn btn-outline" href="agenda.html">View Manifesto</a>
+            </div>
+  
+            <div id="countdown" class="countdown-container">
+               <div class="countdown-item">
+                 <span class="countdown-number" id="days">00</span>
+                 <span class="countdown-label">Days</span>
+               </div>
+               <div class="countdown-item">
+                 <span class="countdown-number" id="hours">00</span>
+                 <span class="countdown-label">Hrs</span>
+               </div>
+               <div class="countdown-item">
+                 <span class="countdown-number" id="minutes">00</span>
+                 <span class="countdown-label">Mins</span>
+               </div>
+               <div class="countdown-item">
+                 <span class="countdown-number" id="seconds">00</span>
+                 <span class="countdown-label">Secs</span>
+               </div>
+            </div>
+            <div style="margin-top:8px; font-size:12px; color:#666;">Election Date: 6th December 2025</div>
+  
+          </div>
+  
+          <aside>
+            <div style="border-radius:14px;overflow:hidden;box-shadow:var(--shadow);">
+              <img src="assets/hero.png" alt="Abubakar Karfi" style="display:block;width:100%;height:auto;">
+            </div>
+            <div style="margin-top:14px;display:flex;gap:12px;align-items:center;justify-content:space-between">
+              <div style="background:var(--black);color:var(--white);padding:10px 14px;border-radius:8px;flex:1">
+                <div style="font-weight:700">SUG President</div>
+                <div style="opacity:0.85;font-size:13px">UMYU • Katsina State</div>
+              </div>
+              <div style="padding:10px 14px;border-radius:8px;border:2px solid rgba(0,0,0,0.06);min-width:120px;text-align:center">
+                <div style="font-weight:800;font-size:20px" id="pledgeCount">0</div>
+                <div style="font-size:12px;color:#666">Pledges</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    <section class="section">
+      <div class="container">
+        <h3>My Vision for UMYU</h3>
+        <p class="muted">A glimpse into the 6-Chapter Manifesto for transformation.</p>
+
+        <div class="features" style="margin-top:18px">
+          <div class="feature">
+            <h4>Student Welfare First</h4>
+            <p>Establishing a functional Help Centre and emergency response channels for health, finance, and crisis situations.</p>
+          </div>
+          
+          <div class="feature">
+            <h4>Academic Excellence</h4>
+            <p>Launching skill acquisition programs, mentorships, and a "Reading Culture Revival Initiative" for academic growth.</p>
+          </div>
+
+          <div class="feature">
+            <h4>Transparent Governance</h4>
+            <p>Open-door policies, quarterly financial reports, and regular town-hall meetings to ensure accountability.</p>
+          </div>
+        </div>
+        
+        <div style="text-align:center; margin-top:20px;">
+            <a href="agenda.html" style="color:var(--green); font-weight:700; text-decoration:underline;">Read Full Manifesto &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:linear-gradient(180deg, rgba(242,168,103,0.02), transparent)">
+      <div class="container">
+        <h3>Get Involved</h3>
+        <p class="muted">Together, we can build the UMYU we dream of.</p>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="support.html">Pledge Support</a>
+          <a class="btn btn-outline" href="contact.html">Join as Volunteer</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <strong>Abubakar A. Karfi</strong><div class="small">Candidate for SUG President — UMYU</div>
+      </div>
+      <div class="small">&copy; <span id="yr"></span> Campaign. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

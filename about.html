@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Abubakar A. Karfi</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico">
+  
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 30px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-sidebar { max-width: 100%; order: -1; margin-bottom: 20px; } /* Image on top for mobile */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Campaign logo">
+        <h1>About Abubakar</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="support.html" class="cta-pledge">Pledge / Support</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container about-grid">
+        
+        <div class="about-content">
+          <h3>Meet Abubakar Ahmed Karfi</h3>
+          <strong>Dept:</strong> Computer Science</p>
+          <hr style="border:0; border-top:1px solid #eee; margin: 15px 0;">
+
+          <p>The Students’ Union Government (SUG) is more than an institution—it is the heartbeat of the student community. As a student of Umaru Musa Yar’adua University, I have witnessed the passion, resilience, and brilliance that define our campus.</p>
+
+          <p>My decision to run for the office of the SUG President is rooted in a deep sense of responsibility, service, and a passion for student development. I believe the time has come for a leadership that is not only committed to representing students but also committed to <strong>transforming challenges into systems</strong>.</p>
+
+          <h4 style="margin-top:24px; color:var(--orange);">Why I Am Contesting</h4>
+          <p>I am contesting because I believe leadership is not a title—it is work, sacrifice, and service to humanity. I want to leave a legacy of progress, unity, and impactful transformation that future generations of UMYU students will benefit from.</p>
+
+          <h4 style="margin-top:24px;">My Core Values</h4>
+          <ul style="line-height: 1.8;">
+            <li><strong>Transparency:</strong> Open governance and financial accountability.</li>
+            <li><strong>Inclusion:</strong> A union that works for every student, irrespective of faculty.</li>
+            <li><strong>Service:</strong> Prioritizing student welfare over politics.</li>
+            <li><strong>Innovation:</strong> Using modern ideas to solve campus problems.</li>
+          </ul>
+          
+          <div style="margin-top: 30px; font-style: italic; color: #555; border-left: 4px solid var(--orange); padding-left: 15px;">
+            "Together, we can create a legacy that will stand the test of time. Together, we rise."
+          </div>
+        </div>
+
+        <aside class="about-sidebar">
+          <div style="border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
+            <img src="assets/hero.jpg" alt="Abubakar Ahmed Karfi" style="width:100%;display:block">
+          </div>
+          
+          <div style="margin-top:12px;padding:20px;background:var(--black);border-radius:8px;color:var(--white);text-align:center">
+            <div style="font-size:18px; font-weight:700; color:var(--orange);">Vote for Change</div>
+            <div style="opacity:0.9;font-size:14px; margin-top:5px;">SUG President — UMYU</div>
+            <div style="margin-top:15px;">
+                <a href="support.html" class="btn btn-primary" style="width:100%; display:block;">Pledge Support</a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <strong>Abubakar A. Karfi</strong><div class="small">Candidate for SUG President — UMYU</div>
+      </div>
+      <div class="small">&copy; <span id="yr2"></span> Campaign. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('yr2').textContent=new Date().getFullYear();</script>
+</body>
+</html>
